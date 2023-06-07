@@ -1,7 +1,13 @@
 # Experiment-08- Encoders-and-decoders 
-### AIM: To implement 8 to 3 Encoder and  3to8 Decoder using verilog and validate its outputs
-### HARDWARE REQUIRED:  – PC, Cyclone II , USB flasher
-### SOFTWARE REQUIRED:   Quartus prime
+### AIM: 
+To implement 8 to 3 Encoder and  3to8 Decoder using verilog and validate its outputs
+
+### HARDWARE REQUIRED:  
+PC, Cyclone II , USB flasher
+
+### SOFTWARE REQUIRED:   
+Quartus prime
+
 ### THEORY 
 
 ## Encoders
@@ -13,6 +19,7 @@ An encoder is a combinational circuit that converts binary information in the fo
 As an example, let’s consider Octal to Binary encoder. As shown in the following figure, an octal-to-binary encoder takes 8 input lines and generates 3 output lines.
 
 ![image](https://user-images.githubusercontent.com/36288975/171543588-bc0746df-a173-4b35-989e-5fb7d385fe8a.png)
+
 ## Figure -01 3 to 8 Encoder 
 
 
@@ -25,6 +32,7 @@ Hence, the encoder can be realised with OR gates as follows:
 
 
 ![image](https://user-images.githubusercontent.com/36288975/171543740-68403b82-aa93-4c98-9343-f32b14885a2e.png)
+
 ## Figure -02 3 to 8 Encoder implenentation 
 
  ### Decoders 
@@ -47,50 +55,98 @@ D7 = X Y Z
 
 
 ![image](https://user-images.githubusercontent.com/36288975/171543978-ee2d0671-2846-40a1-8705-507fd6287a49.png)
+
 ## Figure -03 8 to 3 Decoder 
 
-
-
 ![image](https://user-images.githubusercontent.com/36288975/171543866-5a6eace6-8683-49d7-9c4f-a7cb30ec3035.png)
+
 ## Figure -04 8 to 3 Decoder implementation 
 
-### Procedure
-/* write all the steps invloved */
+### Procedure:
+
+### STEP 1:
+create module encoder and decoder.
+
+### STEP 2:
+Get inputs and outputs for encoders and decoders.
+
+### STEP 3:
+perform or operation for encoder and and logic for decoders.
+
+### STEP 4:
+perform RTL LOGIC and get waveform.
 
 
 
-### PROGRAM 
-/*
-Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+### PROGRAM (ENCODERS):
+
+```
+Program for Endocers and verify its truth table in quartus using Verilog programming.
+Developed by: Mohammed Faizal.J
+RegisterNumber:  212222100027
+```
+
+```vhdl
+module enc(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
+input d0,d1,d2,d3,d4,d5,d6,d7;
+output a,b,c;
+or(a,d4,d5,d6,d7);
+or(b,d2,d3,d6,d7);
+or(c,d1,d3,d5,d7);
+endmodule
+```
+
+### RTL LOGIC :
+
+![image](https://github.com/kaviya2839/Experiment-08-Encoders-and-decoders-/assets/120553351/30a4a545-5ae5-4e3d-a28b-dd32c7148b99)
 
 
+### TIMING DIGRAMS :
+
+![image](https://github.com/kaviya2839/Experiment-08-Encoders-and-decoders-/assets/120553351/8865f77b-0611-4d49-a38b-338e0acc6faa)
 
 
+### TRUTH TABLE :
+
+![image](https://github.com/kaviya2839/Experiment-08-Encoders-and-decoders-/assets/120553351/a1e53025-3871-470c-847d-930985afa0de)
 
 
-### RTL LOGIC  
+### PROGRAM (DECODERS):
 
+```
+Program for Decoders  and verify its truth table in quartus using Verilog programming.
+Developed by: Mohammed Faizal.J
+RegisterNumber:  212222110018
+```
 
+```vhdl
+module enc(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+input a,b,c;
+output d0,d1,d2,d3,d4,d5,d6,d7;
+assign d0 = (~a&~b&~c);
+assign d1 = (~a&~b&c);
+assign d2 = (~a&b&~c);
+assign d3 = (~a&b&c);
+assign d4 = (a&~b&~c);
+assign d5 = (a&~b&c);
+assign d6 = (a&b&~c);
+assign d7 = (a&b&c);
 
+endmodule 
+```
 
+### RTL LOGIC:
 
+![image](https://github.com/kaviya2839/Experiment-08-Encoders-and-decoders-/assets/120553351/fbf521d9-36f3-44ee-8493-93d2441b3310)
 
+### TIMING DIGRAMS :
 
+![image](https://github.com/kaviya2839/Experiment-08-Encoders-and-decoders-/assets/120553351/7bfeca1f-c8a3-47f6-9992-7f8cc8ddea98)
 
-### TIMING DIGRAMS  
+### TRUTH TABLE :
 
+![image](https://github.com/kaviya2839/Experiment-08-Encoders-and-decoders-/assets/120553351/93ccb3cd-a2fe-48d2-aef2-f16c7a8f86e9)
 
+### RESULTS :
 
-
-
-### TRUTH TABLE 
-
-
-
-
-
-
-### RESULTS 
+Thus the program to desing encoder and decoder is done.
